@@ -1,80 +1,37 @@
-# Bitwise-Operators-in-C-
+Aim: To implement bitwise operators in C++
 
-# C++ Operators and Their Usage
+Algorithm:(Bitwise operators in C++)
 
-## Aim
-To study and implement various operators in C++, including bitwise, assignment, miscellaneous operators, and understand operator precedence.
+Start the program.
+Declare two integer variables, a and b, and assign values (a = 5, b = 3).
+Calculate bitwise AND of a and b, store in bitwise_and.
+Calculate bitwise OR of a and b, store in bitwise_or.
+Calculate bitwise XOR of a and b, store in bitwise_xor.
+Calculate bitwise NOT of a, store in bitwise_not.
+Calculate left shift of a by 2 positions, store in left_shift.
+Calculate right shift of a by 1 position, store in right_shift.
+Print the results of all bitwise operations.
+End the program.
+Algorithm:(Setting resetting the bit)
 
----
+Start the program.
+Declare two integer variables: number and bitPosition.
+Prompt the user to enter an integer and read the value into number.
+Prompt the user to enter the bit position to modify and read the value into bitPosition.
+Set the bit at bitPosition in number using bitwise OR and print the result.
+Reset the bit at bitPosition in number using bitwise AND with NOT and print the result.
+End the program.
+Theory : (01) BITWISE OPERATORS IN C++.
 
-## Bitwise Operators
+This C++ program demonstrates bitwise operators using two integers 'a' and 'b'.
+It performs bitwise AND ('&'), OR ('|'), XOR ('^'), NOT ('~'), left shift ('<<'), and right shift ('>>') operations.
+Each result is stored in a variable and then printed.
+The program helps understand how bit-level operations work in C++ and how data is manipulated at the binary level.
+(02) SETTING AND RESETTING THE BIT. The program demonstrates how to set and reset a specific bit in an integer using bitwise operators.
 
-Bitwise operators perform operations on the binary representation of integers.
-
-| Operator | Description                                                             | Example Result                        |
-|----------|-------------------------------------------------------------------------|----------------------------------------|
-| `&`      | AND: Copies bit if it exists in both operands                          | `A & B` → `12 (00001100)`              |
-| '|'     | OR: Copies bit if it exists in either operand                          | `A | B` → `61 (00111101)`              |
-| `^`      | XOR: Copies bit if it exists in one operand but not both               | `A ^ B` → `49 (00110001)`              |
-| `~`      | One's Complement: Flips all bits (unary operator)                      | `~A` → `-61 (in 2's complement)`       |
-| `<<`     | Left Shift: Shifts bits to the left                                    | `A << 2` → `240 (11110000)`            |
-| `>>`     | Right Shift: Shifts bits to the right                                  | `A >> 2` → `15 (00001111)`             |
-
----
-
-## Assignment Operators
-
-Used to assign and manipulate values in variables.
-
-| Operator | Description                                              | Example                |
-|----------|----------------------------------------------------------|------------------------|
-| `=`      | Simple assignment                                        | `C = A + B`            |
-| `+=`     | Add AND assign                                            | `C += A` → `C = C + A` |
-| `-=`     | Subtract AND assign                                       | `C -= A` → `C = C - A` |
-| `*=`     | Multiply AND assign                                       | `C *= A` → `C = C * A` |
-| `/=`     | Divide AND assign                                         | `C /= A` → `C = C / A` |
-| `%=`     | Modulus AND assign                                        | `C %= A` → `C = C % A` |
-| `<<=`    | Left shift AND assign                                     | `C <<= 2`              |
-| `>>=`    | Right shift AND assign                                    | `C >>= 2`              |
-| `&=`     | Bitwise AND AND assign                                    | `C &= 2`               |
-| `^=`     | Bitwise XOR AND assign                                    | `C ^= 2`               |
-
----
-
-## Miscellaneous Operators
-
-| Sr.No | Operator         | Description                                                                 |
-|-------|------------------|-----------------------------------------------------------------------------|
-| 1     | `sizeof`         | Returns the size of a variable (e.g., `sizeof(a)` → `4`)                    |
-| 2     | `?:`             | Ternary conditional operator                                                |
-| 3     | `,`              | Evaluates multiple expressions; returns the last                            |
-| 4     | `.` and `->`     | Access members of structures/unions                                         |
-| 5     | Cast             | Converts data types (e.g., `int(2.2000)` → `2`)                             |
-| 6     | `&`              | Returns the address of a variable                                           |
-| 7     | `*`              | Pointer to a variable                                                       |
-
----
-
-## Operator Precedence in C++
-
-Operator precedence determines how expressions are evaluated.
-
-| Category       | Operators                                 | Associativity     |
-|----------------|-------------------------------------------|-------------------|
-| Postfix        | `() [] -> . ++ --`                        | Left to Right     |
-| Unary          | `+ - ! ~ ++ -- (type)* & sizeof`          | Right to Left     |
-| Multiplicative | `* / %`                                   | Left to Right     |
-| Additive       | `+ -`                                     | Left to Right     |
-| Shift          | `<< >>`                                   | Left to Right     |
-| Relational     | `< <= > >=`                               | Left to Right     |
-| Equality       | `== !=`                                   | Left to Right     |
-| Bitwise AND    | `&`                                       | Left to Right     |
-| Bitwise XOR    | `^`                                       | Left to Right     |
-| Bitwise OR     | `|`                                       | Left to Right     |
-| Logical AND    | `&&`                                      | Left to Right     |
-| Logical OR     | `||`                                      | Left to Right     |
-| Conditional    | `?:`                                      | Right to Left     |
-| Assignment     | `= += -= *= /= %= >>= <<= &= ^= |=`       | Right to Left     |
-| Comma          | `,`                                       | Left to Right     |
-
----
+The user is first prompted to enter an integer 'number' and a 'bitPosition' (starting from 0 for the least significant bit).
+To "set a bit", the program uses the expression:'(number | (1 << bitPosition))'.
+This shifts 1 to the left by 'bitPosition' places, creating a mask. The bitwise OR ('|') sets the bit at that position to 1, without changing other bits.
+To "reset a bit", '(number & (~(1 << bitPosition)))' creates a mask with 0 at the target bit and 1s elsewhere.
+The bitwise AND clears only that bit, keeping others unchanged.
+Conclusion: Both programs show how to perform low-level operations in C++ using bitwise operators. Basic bitwise operations like AND, OR, XOR, NOT, and shifts are displayed in the first. The second uses these ideas to set and reset particular bits. They offer a comprehensive grasp of how bitwise logic can be effectively used to manipulate binary data.
